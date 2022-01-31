@@ -1443,7 +1443,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11458156, guid: 696a93e0e2eb398428d7b5be3f360be6, type: 2}
       propertyPath: m_UiScaleMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 199340, guid: 696a93e0e2eb398428d7b5be3f360be6, type: 2}
       propertyPath: m_IsActive
@@ -1875,14 +1875,14 @@ MonoBehaviour:
   - {fileID: 160696, guid: fac9ad46c0307484fba6960de846139d, type: 2}
   - {fileID: 157776, guid: 82bf03917e16d3d4cad30518cca28308, type: 2}
   - {fileID: 123268, guid: 775fb3e8f5df827428272416a14d9adf, type: 2}
-  - {fileID: 180922, guid: 31f1a82435965944bb6d0f5989c42f1e, type: 2}
-  - {fileID: 136592, guid: bbcaf94b863a5144d861c86a514903af, type: 2}
-  - {fileID: 115116, guid: 402cfc0892ef54047b74d53d5a560238, type: 2}
-  - {fileID: 149992, guid: 4e395833a91102b4a93cdeb0213682db, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 159618, guid: 3e5317fc4f1dea9428c6b92adde04dd3, type: 2}
-  - {fileID: 1625304530342498, guid: f3ee6cb4653185c4aa09bd217e32fa93, type: 2}
-  - {fileID: 1914651395349144, guid: 0698273b88ba93745acd6770db56deac, type: 2}
-  - {fileID: 1952169606747270, guid: ee8c7be799c5c0b4e82e6ea7faff9718, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 162906, guid: 6f894f63c0dede642b94f62fae3c3a72, type: 2}
   - {fileID: 113868, guid: 72eec0d451241354eaba5dd6caf318ab, type: 2}
   - {fileID: 128874, guid: 648a454b0bdfd8c47a5cf48e1f8a3736, type: 2}
