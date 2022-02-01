@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public int maxHealth = 100;
+    public int maxHealth = 1000;
     public int currentHealth;
 
     public PaintTank paintTank;
@@ -33,25 +33,15 @@ public class Player : MonoBehaviour
         {
             interactable = hit.collider.GetComponent<Interactable>();
 
-            if (interactable)
-            {
-                text.SetActive(true);
-            }
+            if (interactable) text.SetActive(true);
           
         }
 
-        if (Input.GetKey(KeyCode.Return))
-        {
-            TakeDamage(1);
-        }
+        if (Input.GetKey(KeyCode.Return)) TakeDamage(1);
 
         if (Input.GetKey(KeyCode.E))
         {
-            if (interactable)
-            {
-                CollectPaint(1);
-            }
-
+            if (interactable) AddPaint(1);
         }
     }
 
@@ -59,12 +49,16 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damage;
 
+        if (currentHealth < 0) currentHealth = 0;
+
         paintTank.SetHealth(currentHealth);
     }
 
-    void CollectPaint(int paint)
+    void AddPaint(int paint)
     {
         currentHealth += paint;
+
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
 
         paintTank.SetHealth(currentHealth);
     }
