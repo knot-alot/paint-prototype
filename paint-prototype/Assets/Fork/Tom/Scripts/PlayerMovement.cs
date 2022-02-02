@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float airMovementMultiplier = 0.4f;
 
 
-
     [Header("Keybinds")]
     [SerializeField] KeyCode jump = KeyCode.Space;
     public float jumpForce = 400;
@@ -41,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     void Update() {
         myInput();
         controlDrag();
+        PlayerMoving();
 
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHight / 2 + 0.1f);
         if (Input.GetKeyDown(jump) && isGrounded) {
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        PlayerMoving();
+        
     }
 
     void controlDrag() {
