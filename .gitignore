@@ -82,4 +82,3 @@ crashlytics-build.properties
 
 # Unity Production Scene ignored to enforce users must use the prefabs
 /paint-prototype/Assets/Production/Scenes/*
-paint-prototype/Assets/Production/Scenes/Production.unity
