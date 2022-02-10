@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class CustomGravity
 {
+
     public static Vector3 GetGravity(Vector3 position)
     {
         return position.normalized * Physics.gravity.y;

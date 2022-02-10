@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CustomGravityRigidbody : MonoBehaviour
 {
+
     [SerializeField]
     bool floatToSleep = false;
 
@@ -41,6 +42,8 @@ public class CustomGravityRigidbody : MonoBehaviour
                 floatDelay = 0f;
             }
         }
-        body.AddForce(CustomGravity.GetGravity(body.position), ForceMode.Acceleration);
+        body.AddForce(
+            CustomGravity.GetGravity(body.position), ForceMode.Acceleration
+        );
     }
 }
