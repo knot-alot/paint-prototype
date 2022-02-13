@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class TargetMovement : MonoBehaviour
+public class J_TargetMovement : MonoBehaviour
 {
     [SerializeField]
     Transform[] wayPoints;

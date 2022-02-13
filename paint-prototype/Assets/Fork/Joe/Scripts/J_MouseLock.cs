@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseLock : MonoBehaviour
+public class J_MouseLock : MonoBehaviour
 {
 
     public float mouseSensitivty = 1000f;

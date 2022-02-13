@@ -31,7 +31,10 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             TakeDamage(1);
-            praticle.Play();
+            if (currentHealth > 0) {
+                praticle.Play();
+            }
+        
         }
         if (Input.GetMouseButtonUp(0))
         {
