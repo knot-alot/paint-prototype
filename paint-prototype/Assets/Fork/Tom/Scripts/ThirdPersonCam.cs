@@ -30,6 +30,9 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField, Range(0f, 90f)]
     float alignSmoothRange = 45f;
 
+    [SerializeField, Min(0f)]
+    float upAlignmentSpeed = 360f;
+
     [SerializeField]
     LayerMask obstructionMask = -1;
 
@@ -40,6 +43,10 @@ public class ThirdPersonCam : MonoBehaviour
     Vector2 orbitAngles = new Vector2(45f, 0f);
 
     float lastManualRotationTime;
+
+    Quaternion gravityAlignment = Quaternion.identity;
+
+    Quaternion orbitRotation;
 
     Vector3 CameraHalfExtends
     {
@@ -67,22 +74,19 @@ public class ThirdPersonCam : MonoBehaviour
     {
         regularCamera = GetComponent<Camera>();
         focusPoint = focus.position;
-        transform.localRotation = Quaternion.Euler(orbitAngles);
+        transform.localRotation = orbitRotation = Quaternion.Euler(orbitAngles);
     }
 
     void LateUpdate()
     {
+        UpdateGravityAlignment();
         UpdateFocusPoint();
-        Quaternion lookRotation;
         if (ManualRotation() || AutomaticRotation())
         {
             ConstrainAngles();
-            lookRotation = Quaternion.Euler(orbitAngles);
+            orbitRotation = Quaternion.Euler(orbitAngles);
         }
-        else
-        {
-            lookRotation = transform.localRotation;
-        }
+        Quaternion lookRotation = gravityAlignment * orbitRotation;
 
         Vector3 lookDirection = lookRotation * Vector3.forward;
         Vector3 lookPosition = focusPoint - lookDirection * distance;
@@ -104,6 +108,28 @@ public class ThirdPersonCam : MonoBehaviour
         }
 
         transform.SetPositionAndRotation(lookPosition, lookRotation);
+    }
+
+    void UpdateGravityAlignment()
+    {
+        Vector3 fromUp = gravityAlignment * Vector3.up;
+        Vector3 toUp = CustomGravity.GetUpAxis(focusPoint);
+        float dot = Mathf.Clamp(Vector3.Dot(fromUp, toUp), -1f, 1f);
+        float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+        float maxAngle = upAlignmentSpeed * Time.deltaTime;
+
+        Quaternion newAlignment =
+            Quaternion.FromToRotation(fromUp, toUp) * gravityAlignment;
+        if (angle <= maxAngle)
+        {
+            gravityAlignment = newAlignment;
+        }
+        else
+        {
+            gravityAlignment = Quaternion.SlerpUnclamped(
+                gravityAlignment, newAlignment, maxAngle / angle
+            );
+        }
     }
 
     void UpdateFocusPoint()
@@ -133,8 +159,8 @@ public class ThirdPersonCam : MonoBehaviour
     bool ManualRotation()
     {
         Vector2 input = new Vector2(
-            Input.GetAxis("Mouse Y"),
-            Input.GetAxis("Mouse X")
+            Input.GetAxis("Vertical Camera"),
+            Input.GetAxis("Horizontal Camera")
         );
         const float e = 0.001f;
         if (input.x < -e || input.x > e || input.y < -e || input.y > e)
@@ -153,10 +179,10 @@ public class ThirdPersonCam : MonoBehaviour
             return false;
         }
 
-        Vector2 movement = new Vector2(
-            focusPoint.x - previousFocusPoint.x,
-            focusPoint.z - previousFocusPoint.z
-        );
+        Vector3 alignedDelta =
+            Quaternion.Inverse(gravityAlignment) *
+            (focusPoint - previousFocusPoint);
+        Vector2 movement = new Vector2(alignedDelta.x, alignedDelta.z);
         float movementDeltaSqr = movement.sqrMagnitude;
         if (movementDeltaSqr < 0.0001f)
         {
@@ -201,3 +227,4 @@ public class ThirdPersonCam : MonoBehaviour
         return direction.x < 0f ? 360f - angle : angle;
     }
 }
+

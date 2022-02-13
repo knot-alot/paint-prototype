@@ -13,6 +13,8 @@ public class CustomGravityRigidbody : MonoBehaviour
 
     float floatDelay;
 
+    private Transform playerTransform;
+
     void Awake()
     {
         body = GetComponent<Rigidbody>();
@@ -21,6 +23,7 @@ public class CustomGravityRigidbody : MonoBehaviour
 
     void FixedUpdate()
     {
+       
         if (floatToSleep)
         {
             if (body.IsSleeping())
@@ -42,8 +45,6 @@ public class CustomGravityRigidbody : MonoBehaviour
                 floatDelay = 0f;
             }
         }
-        body.AddForce(
-            CustomGravity.GetGravity(body.position), ForceMode.Acceleration
-        );
+        
     }
 }

@@ -53,6 +53,7 @@ public class PlayerMovementNew : MonoBehaviour
 
     int stepsSinceLastGrounded, stepsSinceLastJump;
 
+
     void OnValidate()
     {
         minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
@@ -82,19 +83,18 @@ public class PlayerMovementNew : MonoBehaviour
         if (playerInputSpace)
         {
             rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
-            forwardAxis =
-                ProjectDirectionOnPlane(playerInputSpace.forward, upAxis);
+            forwardAxis = ProjectDirectionOnPlane(playerInputSpace.forward, upAxis);
         }
         else
         {
             rightAxis = ProjectDirectionOnPlane(Vector3.right, upAxis);
             forwardAxis = ProjectDirectionOnPlane(Vector3.forward, upAxis);
         }
-        desiredVelocity =
-            new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
+        desiredVelocity = new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
 
         desiredJump |= Input.GetButtonDown("Jump");
     }
+
 
     void FixedUpdate()
     {
@@ -134,6 +134,7 @@ public class PlayerMovementNew : MonoBehaviour
         velocity = body.velocity;
         if (OnGround || SnapToGround() || CheckSteepContacts())
         {
+
             stepsSinceLastGrounded = 0;
             if (stepsSinceLastJump > 1)
             {
