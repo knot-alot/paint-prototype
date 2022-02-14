@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        paintTank.SetMaxHealth(maxHealth);
+        paintTank.SetMaxFill(maxHealth);
         cam = Camera.main;
     }
 
@@ -56,8 +56,6 @@ public class Player : MonoBehaviour
           
         }
 
-      //  if (Input.GetMouseButtonDown(0)) TakeDamage(1);
-
         if (Input.GetKey(KeyCode.E))
         {
             if (interactable) AddPaint(1);
@@ -70,7 +68,7 @@ public class Player : MonoBehaviour
 
         if (currentHealth < 0) currentHealth = 0;
 
-        paintTank.SetHealth(currentHealth);
+        paintTank.SetFill(currentHealth);
     }
 
     void AddPaint(int paint)
@@ -79,7 +77,7 @@ public class Player : MonoBehaviour
 
         if (currentHealth > maxHealth) currentHealth = maxHealth;
 
-        paintTank.SetHealth(currentHealth);
+        paintTank.SetFill(currentHealth);
     }
 
   
