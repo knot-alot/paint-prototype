@@ -8,12 +8,12 @@ public class Assassin : MonoBehaviour
     Transform playerInputSpace = default;
 
     [SerializeField, Range(0f, 100f)]
-    float maxSpeed = 10f, maxClimbSpeed = 4f;
+    float maxSpeed = 5.5f, maxClimbSpeed = 4f;
 
     [SerializeField, Range(0f, 100f)]
     float
-        maxAcceleration = 10f,
-        maxAirAcceleration = 1f,
+        maxAcceleration = 5.5f,
+        maxAirAcceleration = 3f,
         maxClimbAcceleration = 40f;
 
     [SerializeField, Range(0f, 10f)]
@@ -138,9 +138,7 @@ public class Assassin : MonoBehaviour
         }
         else if (desiresClimbing && OnGround)
         {
-            velocity +=
-                (gravity - contactNormal * (maxClimbAcceleration * 0.9f)) *
-                Time.deltaTime;
+            velocity += (gravity - contactNormal * (maxClimbAcceleration * 0.9f)) * Time.deltaTime;
         }
         else
         {
@@ -203,14 +201,12 @@ public class Assassin : MonoBehaviour
     {
         if (connectedBody == previousConnectedBody)
         {
-            Vector3 connectionMovement =
-                connectedBody.transform.TransformPoint(connectionLocalPosition) -
-                connectionWorldPosition;
-            connectionVelocity = connectionMovement / Time.deltaTime;
+           Vector3 connectionMovement = connectedBody.transform.TransformPoint(connectionLocalPosition) -
+           connectionWorldPosition;
+           connectionVelocity = connectionMovement / Time.deltaTime;
         }
         connectionWorldPosition = body.position;
-        connectionLocalPosition = connectedBody.transform.InverseTransformPoint(
-            connectionWorldPosition
+        connectionLocalPosition = connectedBody.transform.InverseTransformPoint(connectionWorldPosition
         );
     }
 
@@ -314,10 +310,8 @@ public class Assassin : MonoBehaviour
 
         float maxSpeedChange = acceleration * Time.deltaTime;
 
-        float newX =
-            Mathf.MoveTowards(currentX, playerInput.x * speed, maxSpeedChange);
-        float newZ =
-            Mathf.MoveTowards(currentZ, playerInput.y * speed, maxSpeedChange);
+        float newX = Mathf.MoveTowards(currentX, playerInput.x * speed, maxSpeedChange);
+        float newZ = Mathf.MoveTowards(currentZ, playerInput.y * speed, maxSpeedChange);
 
         velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
     }
@@ -394,9 +388,7 @@ public class Assassin : MonoBehaviour
                         connectedBody = collision.rigidbody;
                     }
                 }
-                if (
-                    desiresClimbing && upDot >= minClimbDotProduct &&
-                    (climbMask & (1 << layer)) != 0
+                if (desiresClimbing && upDot >= minClimbDotProduct && (climbMask & (1 << layer)) != 0
                 )
                 {
                     climbContactCount += 1;
@@ -415,7 +407,6 @@ public class Assassin : MonoBehaviour
 
     float GetMinDot(int layer)
     {
-        return (stairsMask & (1 << layer)) == 0 ?
-            minGroundDotProduct : minStairsDotProduct;
+        return (stairsMask & (1 << layer)) == 0 ? minGroundDotProduct : minStairsDotProduct;
     }
 }
