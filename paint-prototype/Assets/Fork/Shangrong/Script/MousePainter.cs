@@ -12,9 +12,7 @@ public class MousePainter : MonoBehaviour{
     public float hardness = 1;
 
     void Update(){
-
-        bool click;
-        click = mouseSingleClick ? Input.GetMouseButtonDown(0) : Input.GetMouseButton(0);
+        bool click = mouseSingleClick ? Input.GetMouseButtonDown(0) : Input.GetMouseButton(0);
 
         if (click){
             Vector3 position = Input.mousePosition;

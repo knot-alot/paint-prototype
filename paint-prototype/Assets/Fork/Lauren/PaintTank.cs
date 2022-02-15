@@ -10,19 +10,18 @@ public class PaintTank : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void SetMaxHealth(int health)
+    public void SetMaxFill(int fillAmount)
     {
-        slider.maxValue = health;
-        slider.value = health;
+        slider.maxValue = fillAmount;
+        slider.value = fillAmount;
 
         fill.color = gradient.Evaluate(1.0f);
     }
 
-    public void SetHealth(int health)
+    public void SetFill(int fillAmount)
     {
-        slider.value = health;
+        slider.value = fillAmount;
         fill.color = gradient.Evaluate(slider.normalizedValue);
 
     }
-
 }
