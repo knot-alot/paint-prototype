@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     ParticleSystem praticle;
+    [SerializeField]
+    ParticleSystem deathParticle;
     [SerializeField] Camera cam;
     public int maxHealth = 1000;
     public int currentHealth;
@@ -60,6 +62,9 @@ public class Player : MonoBehaviour
         {
             if (interactable) AddPaint(1);
         }
+
+        if (currentHealth == 0) PlayerDeath();
+        
     }
 
     void TakeDamage(int damage)
@@ -78,6 +83,13 @@ public class Player : MonoBehaviour
         if (currentHealth > maxHealth) currentHealth = maxHealth;
 
         paintTank.SetFill(currentHealth);
+    }
+
+    void PlayerDeath()
+    {
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 
   
