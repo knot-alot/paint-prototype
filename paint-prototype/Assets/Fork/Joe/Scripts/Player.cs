@@ -15,14 +15,14 @@ public class Player : MonoBehaviour
     public PaintTank paintTank;
 
     public GameObject text;
-   // Camera cam;
 
+    public bool usePaint = true;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         paintTank.SetMaxFill(maxHealth);
-        cam = Camera.main;
+       
     }
 
     // Update is called once per frame
@@ -30,9 +30,12 @@ public class Player : MonoBehaviour
     {
 
         Vector3 angle = cam.transform.localEulerAngles;
+
+        if (Input.GetButtonDown("UnlimPaint")) usePaint = !usePaint;
+
         if (Input.GetMouseButton(0))
         {
-            TakeDamage(1);
+            if(usePaint) TakeDamage(1);
             if (currentHealth > 0) {
                 praticle.Play();
             }
@@ -42,6 +45,9 @@ public class Player : MonoBehaviour
         {
             praticle.Stop();
         }
+
+        
+
         praticle.transform.localEulerAngles = angle;
 
     

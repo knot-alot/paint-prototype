@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4543607708134919502}
   - component: {fileID: 4543607708134919496}
   m_Layer: 4
-  m_Name: Particle System
+  m_Name: Physical Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9764,7 +9764,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5573442328179672875}
-  m_LocalRotation: {x: 0.04319665, y: 0.3302548, z: -0.015131716, w: 0.94278145}
+  m_LocalRotation: {x: -0.007470946, y: 0.20124173, z: -0.0015349133, w: -0.979512}
   m_LocalPosition: {x: 1.02, y: 10.46, z: -16.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
