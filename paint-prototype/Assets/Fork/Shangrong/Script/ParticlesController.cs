@@ -24,6 +24,8 @@ public class ParticlesController: MonoBehaviour{
         List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>(part.GetSafeCollisionEventSize());
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
+        if (other.tag == "Reservoir") other.GetComponent<Reservoir>().TakeDamage(100);
+
         Paintable p = other.GetComponent<Paintable>();
         if(p != null){
             for  (int i = 0; i< numCollisionEvents; i++){
