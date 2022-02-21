@@ -7,7 +7,7 @@ TagManager:
   - Missile
   - Fire
   - Wall
-  - Destructable
+  - Reservoir
   layers:
   - Default
   - TransparentFX
