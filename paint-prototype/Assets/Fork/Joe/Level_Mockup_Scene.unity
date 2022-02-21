@@ -18101,7 +18101,7 @@ GameObject:
   - component: {fileID: 1218372757}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Reservoir
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18208,7 +18208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticle: {fileID: 9121013012844676283, guid: 7c039fe067c517045b360dcdea93b891, type: 3}
-  maxHealth: 100
+  maxHealth: 1000
   currentHealth: 0
 --- !u!1 &1221268850
 GameObject:
@@ -19445,9 +19445,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -23233,9 +23233,9 @@ MonoBehaviour:
   maxSpeed: 5.5
   maxClimbSpeed: 4
   maxAcceleration: 5.5
-  maxAirAcceleration: 3
+  maxAirAcceleration: 2
   maxClimbAcceleration: 40
-  jumpHeight: 2
+  jumpHeight: 1
   maxGroundAngle: 25
   maxStairsAngle: 50
   maxClimbAngle: 140
