@@ -6,7 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField]
     ParticleSystem praticle;
-    [SerializeField]Camera cam;
+   // [SerializeField]Camera cam;
     void Start()
     {
         
@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 angle = cam.transform.localEulerAngles;
+      // Vector3 angle = cam.transform.localEulerAngles;
         if (Input.GetMouseButtonDown(0)) {
             praticle.Play();
         }
@@ -23,7 +23,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             praticle.Stop();
         }
-        praticle.transform.localEulerAngles = angle; 
+    //    praticle.transform.localEulerAngles = angle; 
        
     }
 
