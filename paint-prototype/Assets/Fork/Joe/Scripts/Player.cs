@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         paintTank.SetMaxFill(maxHealth);
-       
+
     }
 
     // Update is called once per frame
@@ -33,25 +33,30 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("UnlimPaint")) usePaint = !usePaint;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            if(usePaint) TakeDamage(1);
-            if (currentHealth > 0) {
+            if (currentHealth > 0)
+            {
                 praticle.Play();
             }
-        
+
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButton(0))
+        {
+            if (usePaint) TakeDamage(1);
+        }
+
+        else if (Input.GetMouseButtonUp(0))
         {
             praticle.Stop();
         }
 
-        
+
 
         praticle.transform.localEulerAngles = angle;
 
-    
-    text.SetActive(false);
+
+        text.SetActive(false);
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Interactable interactable = null;
@@ -61,7 +66,7 @@ public class Player : MonoBehaviour
             interactable = hit.collider.GetComponent<Interactable>();
 
             if (interactable) text.SetActive(true);
-          
+
         }
 
         if (Input.GetKey(KeyCode.E))
@@ -70,7 +75,7 @@ public class Player : MonoBehaviour
         }
 
         if (currentHealth == 0) PlayerDeath();
-        
+
     }
 
     void TakeDamage(int damage)
@@ -98,5 +103,5 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
-  
+
 }
