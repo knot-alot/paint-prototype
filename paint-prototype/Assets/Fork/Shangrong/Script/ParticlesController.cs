@@ -11,17 +11,18 @@ public class ParticlesController: MonoBehaviour{
     public float hardness = 1;
     [Space]
     ParticleSystem part;
-    
+    List<ParticleCollisionEvent> collisionEvents;
 
     void Start(){
         part = GetComponent<ParticleSystem>();
+        collisionEvents = new List<ParticleCollisionEvent>();
         //var pr = part.GetComponent<ParticleSystemRenderer>();
         //Color c = new Color(pr.material.color.r, pr.material.color.g, pr.material.color.b, .8f);
         //paintColor = c;
     }
 
     void OnParticleCollision(GameObject other) {
-        List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>(part.GetSafeCollisionEventSize());
+       // List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>(part.GetSafeCollisionEventSize());
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
         Paintable p = other.GetComponent<Paintable>();
