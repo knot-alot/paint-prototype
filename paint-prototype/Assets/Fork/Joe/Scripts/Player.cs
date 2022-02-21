@@ -33,15 +33,19 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("UnlimPaint")) usePaint = !usePaint;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            if(usePaint) TakeDamage(1);
             if (currentHealth > 0) {
                 praticle.Play();
             }
         
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButton(0))
+        {
+            if (usePaint) TakeDamage(1);
+        }
+
+        else if (Input.GetMouseButtonUp(0))
         {
             praticle.Stop();
         }
