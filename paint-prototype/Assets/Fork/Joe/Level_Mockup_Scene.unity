@@ -23362,7 +23362,7 @@ MonoBehaviour:
   praticle: {fileID: 5573442329111404575}
   deathParticle: {fileID: 9121013012844676283, guid: 7c039fe067c517045b360dcdea93b891, type: 3}
   cam: {fileID: 1301748575}
-  maxHealth: 5000
+  maxHealth: 1000
   currentHealth: 0
   paintTank: {fileID: 1689100776}
   text: {fileID: 1689100777}
@@ -37782,7 +37782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650ada64acb1e934ba0c6f3c6fb51df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paintColor: {r: 0, g: 0.5386491, b: 1, a: 1}
+  paintColor: {r: 0.7806201, g: 0.368325, b: 0.8396226, a: 1}
   minRadius: 0.2
   maxRadius: 1.5
   strength: 1
