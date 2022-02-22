@@ -70,6 +70,11 @@ public class Assassin : MonoBehaviour
 
     MeshRenderer meshRenderer;
 
+    [SerializeField, Range(0, 90)]
+    float groundDrag = 6f;
+    [SerializeField, Range(0, 90)]
+    float airDrag = 2f;
+
 
     void OnValidate()
     {
@@ -88,8 +93,8 @@ public class Assassin : MonoBehaviour
 
     void Update()
     {
-        PlayerInputs();
         ControlDrag();
+        PlayerInputs();
     }
 
     void PlayerInputs()
@@ -121,6 +126,8 @@ public class Assassin : MonoBehaviour
         Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
         UpdateState();
         AdjustVelocity();
+        
+
 
         if (desiredJump)
         {
@@ -130,6 +137,7 @@ public class Assassin : MonoBehaviour
 
         if (Climbing)
         {
+            //body.transform.SetPositionAndRotation(new Vector3(),Quaternion.Euler(new Vector3()));
             velocity -= contactNormal * (maxClimbAcceleration * 0.9f * Time.deltaTime);
         }
         else if (OnGround && velocity.sqrMagnitude < 0.01f)
@@ -152,7 +160,13 @@ public class Assassin : MonoBehaviour
 
     void ControlDrag()
     {
-        body.drag = 0.5f;
+        if (OnGround) {
+            body.drag = groundDrag;
+        }
+        else {
+            body.drag = airDrag;
+        }
+        
     }
 
     void ClearState()
@@ -214,6 +228,7 @@ public class Assassin : MonoBehaviour
     {
         if (Climbing)
         {
+            body.transform.rotation = Quaternion.identity;
             if (climbContactCount > 1)
             {
                 climbNormal.Normalize();
@@ -409,4 +424,6 @@ public class Assassin : MonoBehaviour
     {
         return (stairsMask & (1 << layer)) == 0 ? minGroundDotProduct : minStairsDotProduct;
     }
+
+
 }

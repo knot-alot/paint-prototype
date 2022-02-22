@@ -53,6 +53,11 @@ public class Heavy : MonoBehaviour
 
     int stepsSinceLastGrounded, stepsSinceLastJump;
 
+    [SerializeField, Range(0, 90)]
+    float groundDrag = 6f;
+    [SerializeField, Range(0, 90)]
+    float airDrag = 2f;
+
     void OnValidate()
     {
         minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
@@ -116,7 +121,14 @@ public class Heavy : MonoBehaviour
 
     void ControlDrag()
     {
-        body.drag = 0.5f;
+        if (OnGround)
+        {
+            body.drag = groundDrag;
+        }
+        else
+        {
+            body.drag = airDrag;
+        }
     }
 
     void ClearState()
