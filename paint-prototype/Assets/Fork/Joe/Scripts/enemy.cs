@@ -32,7 +32,7 @@ public class enemy : MonoBehaviour
 
         Vector3 angle = this.cam.transform.localEulerAngles;
 
-        if (Input.GetButtonDown("UnlimPaint")) this.usePaint = !this.usePaint;
+        //if (Input.GetButtonDown("UnlimPaint")) this.usePaint = !this.usePaint;
 
         //if (Input.GetMouseButtonDown(0))
         //{
@@ -70,10 +70,10 @@ public class enemy : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            if (interactable) this.AddPaint(1);
-        }
+        //if (Input.GetKey(KeyCode.E))
+        //{
+        //    if (interactable) this.AddPaint(1);
+        //}
 
         if (currentHealth == 0) this.PlayerDeath();
 
