@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 103146451}
   - component: {fileID: 103146450}
   - component: {fileID: 103146449}
-  - component: {fileID: 103146448}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -118,31 +117,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &103146448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103146446}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379ed07d4a253e84f9c97f1a92ed7a2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  focus: {fileID: 1054890343}
-  distance: 5
-  focusRadius: 5
-  focusCentering: 0.5
-  rotationSpeed: 90
-  minVerticalAngle: -45
-  maxVerticalAngle: 45
-  alignDelay: 5
-  alignSmoothRange: 45
-  upAlignmentSpeed: 360
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &202285700
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,12 +127,9 @@ GameObject:
   m_Component:
   - component: {fileID: 202285703}
   - component: {fileID: 202285702}
-  - component: {fileID: 202285708}
   - component: {fileID: 202285701}
   - component: {fileID: 202285704}
   - component: {fileID: 202285707}
-  - component: {fileID: 202285706}
-  - component: {fileID: 202285705}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -198,42 +169,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &202285708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202285700}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2568d4ee35a67be4b931c9e45d87dab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInputSpace: {fileID: 103146447}
-  maxSpeed: 10
-  maxClimbSpeed: 4
-  maxAcceleration: 10
-  maxAirAcceleration: 1
-  maxClimbAcceleration: 40
-  jumpHeight: 2
-  maxAirJumps: 0
-  maxGroundAngle: 25
-  maxStairsAngle: 50
-  maxClimbAngle: 140
-  maxSnapSpeed: 100
-  probeDistance: 1
-  probeMask:
-    serializedVersion: 2
-    m_Bits: 3123
-  stairsMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  climbMask:
-    serializedVersion: 2
-    m_Bits: 1395
-  normalMaterial: {fileID: 2100000, guid: 718c528563cb7f74aa9f9870077bdabc, type: 2}
-  climbingMaterial: {fileID: 2100000, guid: 9cac06cbf4ea09a48badb05dca0fdaf8, type: 2}
 --- !u!114 &202285701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,19 +203,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202285700}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f9dd61db9d544c4dbd499eb8711bee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInputSpace: {fileID: 103146447}
-  maxSpeed: 5.5
+  cameraTransform: {fileID: 103146447}
+  camTrans: {fileID: 103146447}
+  playerTransform: {fileID: 202285703}
+  maxSpeed: 15
   maxClimbSpeed: 4
-  maxAcceleration: 5.5
+  maxAcceleration: 12.5
   maxAirAcceleration: 3
   maxClimbAcceleration: 40
   jumpHeight: 2
-  maxGroundAngle: 25
+  maxGroundAngle: 40
   maxStairsAngle: 50
   maxClimbAngle: 140
   maxSnapSpeed: 100
@@ -294,63 +231,8 @@ MonoBehaviour:
   climbMask:
     serializedVersion: 2
     m_Bits: 1395
-  normalMaterial: {fileID: 2100000, guid: 718c528563cb7f74aa9f9870077bdabc, type: 2}
-  climbingMaterial: {fileID: 2100000, guid: 9cac06cbf4ea09a48badb05dca0fdaf8, type: 2}
---- !u!114 &202285706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202285700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 084cafcd8bcfd404693d7100d7ceb567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInputSpace: {fileID: 103146447}
-  maxSpeed: 4.75
-  maxAcceleration: 4.75
-  maxAirAcceleration: 1
-  jumpHeight: 2
-  maxAirJumps: 0
-  maxGroundAngle: 25
-  maxStairsAngle: 50
-  maxSnapSpeed: 100
-  probeDistance: 1
-  probeMask:
-    serializedVersion: 2
-    m_Bits: 3123
-  stairsMask:
-    serializedVersion: 2
-    m_Bits: 1024
---- !u!114 &202285705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202285700}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d9bf37ae4a74c479777bc895d7f858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInputSpace: {fileID: 103146447}
-  maxSpeed: 4
-  maxAcceleration: 4
-  maxAirAcceleration: 1
-  jumpHeight: 2
-  maxGroundAngle: 25
-  maxStairsAngle: 50
-  maxSnapSpeed: 100
-  probeDistance: 1
-  probeMask:
-    serializedVersion: 2
-    m_Bits: 3123
-  stairsMask:
-    serializedVersion: 2
-    m_Bits: 1024
+  groundDrag: 3
+  airDrag: 0.5
 --- !u!1 &1054890342
 GameObject:
   m_ObjectHideFlags: 0
