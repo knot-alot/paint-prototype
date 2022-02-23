@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 103146451}
   - component: {fileID: 103146450}
   - component: {fileID: 103146449}
-  - component: {fileID: 103146448}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -157,31 +156,6 @@ Transform:
   m_Father: {fileID: 202285703}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &103146448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103146446}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379ed07d4a253e84f9c97f1a92ed7a2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  focus: {fileID: 1054890343}
-  distance: 5
-  focusRadius: 5
-  focusCentering: 0.5
-  rotationSpeed: 90
-  minVerticalAngle: -45
-  maxVerticalAngle: 45
-  alignDelay: 5
-  alignSmoothRange: 45
-  upAlignmentSpeed: 360
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &103146449
 MonoBehaviour:
   m_ObjectHideFlags: 0
