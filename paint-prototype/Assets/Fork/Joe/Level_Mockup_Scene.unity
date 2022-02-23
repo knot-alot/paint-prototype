@@ -130,30 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 202285707, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-      propertyPath: maxSpeed
-      value: 5.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 202285707, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-      propertyPath: groundDrag
-      value: 6.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 202285707, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-      propertyPath: jumpHeight
-      value: 3.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 202285707, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-      propertyPath: maxClimbSpeed
-      value: 13.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 202285707, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-      propertyPath: maxAcceleration
-      value: 70.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 202285707, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-      propertyPath: maxAirAcceleration
-      value: 25.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1588827397, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
       propertyPath: text
       value: 
