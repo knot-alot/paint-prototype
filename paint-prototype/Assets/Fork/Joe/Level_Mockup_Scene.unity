@@ -9123,7 +9123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   praticle: {fileID: 8924593950884572906}
-  deathParticle: {fileID: 9121013012844676283, guid: 7c039fe067c517045b360dcdea93b891, type: 3}
+  deathParticle: {fileID: 8924593950740968209}
   cam: {fileID: 224150290}
   maxHealth: 1500
   paintTank: {fileID: 706484432}
