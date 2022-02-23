@@ -70,6 +70,10 @@ public class Assassin : MonoBehaviour
 
     MeshRenderer meshRenderer;
 
+    [SerializeField, Range(0f, 90f)]
+    float groundDrag = 6f;
+    [SerializeField, Range(0f, 90f)]
+    float airDrag = 2f;
 
     void OnValidate()
     {
@@ -152,7 +156,13 @@ public class Assassin : MonoBehaviour
 
     void ControlDrag()
     {
-        body.drag = 0.5f;
+        if (OnGround)
+        {
+            body.drag = groundDrag;
+        }
+        else {
+            body.drag = airDrag;
+        }
     }
 
     void ClearState()
