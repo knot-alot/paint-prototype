@@ -4,39 +4,26 @@ using UnityEngine;
 
 public class Assassin : MonoBehaviour
 {
-    [Header("Camera Transformation")]
     [SerializeField]
-    public Transform cameraTransform;
-    public Transform camTrans;
-    public Transform playerTransform;
-
-    [Header("Speed Of Player")]
-    [SerializeField, Range(0f, 100f)]
-    float maxSpeed = 5.5f;
-    [SerializeField, Range(0f, 100f)]
-    float maxClimbSpeed = 4f;
-
-    [Header("Acceleration of Player")]
-    [SerializeField, Range(0f, 100f)]
-    float maxAcceleration = 5.5f;
+    Transform playerInputSpace = default;
 
     [SerializeField, Range(0f, 100f)]
-    float maxAirAcceleration = 3f;
+    float maxSpeed = 5.5f, maxClimbSpeed = 4f;
 
     [SerializeField, Range(0f, 100f)]
-    float maxClimbAcceleration = 40f;
+    float
+        maxAcceleration = 5.5f,
+        maxAirAcceleration = 3f,
+        maxClimbAcceleration = 40f;
 
-    [Header("Jump Settings of Player")]
     [SerializeField, Range(0f, 10f)]
     float jumpHeight = 2f;
+
+    
     int maxAirJumps = 1;
 
-    [Header("Angles set for Player")]
     [SerializeField, Range(0, 90)]
-    float maxGroundAngle = 25f;
-
-    [SerializeField, Range(0f, 90f)]
-    float maxStairsAngle = 50f;
+    float maxGroundAngle = 25f, maxStairsAngle = 50f;
 
     [SerializeField, Range(90, 170)]
     float maxClimbAngle = 140f;
@@ -47,22 +34,11 @@ public class Assassin : MonoBehaviour
     [SerializeField, Min(0f)]
     float probeDistance = 1f;
 
-    [Header("Setting Player Masks ")]
     [SerializeField]
-    LayerMask probeMask = -1;
-
-    [SerializeField]
-    LayerMask stairsMask = -1;
+    LayerMask probeMask = -1, stairsMask = -1, climbMask = -1;
 
     [SerializeField]
-    LayerMask climbMask = -1;
-
-    [Header("Setting Player Drag ")]
-    [SerializeField, Range(0, 90)]
-    float groundDrag = 6f;
-
-    [SerializeField, Range(0, 90)]
-    float airDrag = 2f;
+    Material normalMaterial = default, climbingMaterial = default;
 
     Rigidbody body, connectedBody, previousConnectedBody;
 
@@ -92,8 +68,12 @@ public class Assassin : MonoBehaviour
 
     int stepsSinceLastGrounded, stepsSinceLastJump;
 
-    
+    MeshRenderer meshRenderer;
 
+    [SerializeField, Range(0f, 90f)]
+    float groundDrag = 6f;
+    [SerializeField, Range(0f, 90f)]
+    float airDrag = 2f;
 
     void OnValidate()
     {
@@ -106,26 +86,26 @@ public class Assassin : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         body.useGravity = false;
-        playerTransform = this.GetComponent<Transform>();
+        meshRenderer = GetComponent<MeshRenderer>();
         OnValidate();
     }
 
     void Update()
     {
-        ControlDrag();
         PlayerInputs();
+        ControlDrag();
     }
 
     void PlayerInputs()
     {
         playerInput.x = Input.GetAxis("Horizontal");
         playerInput.y = Input.GetAxis("Vertical");
-        playerInput.Normalize();
+        playerInput = Vector2.ClampMagnitude(playerInput, 1f);
 
-        if (cameraTransform)
+        if (playerInputSpace)
         {
-            rightAxis = ProjectDirectionOnPlane(cameraTransform.right, upAxis);
-            forwardAxis = ProjectDirectionOnPlane(cameraTransform.forward, upAxis);
+            rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
+            forwardAxis = ProjectDirectionOnPlane(playerInputSpace.forward, upAxis);
         }
         else
         {
@@ -135,6 +115,8 @@ public class Assassin : MonoBehaviour
 
         desiredJump |= Input.GetButtonDown("Jump");
         desiresClimbing = Input.GetButton("Climb");
+
+        meshRenderer.material = Climbing ? climbingMaterial : normalMaterial;
     }
 
 
@@ -143,7 +125,7 @@ public class Assassin : MonoBehaviour
         Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
         UpdateState();
         AdjustVelocity();
-        
+
         if (desiredJump)
         {
             desiredJump = false;
@@ -174,8 +156,13 @@ public class Assassin : MonoBehaviour
 
     void ControlDrag()
     {
-        if (OnGround)   body.drag = groundDrag;
-        else            body.drag = airDrag;
+        if (OnGround)
+        {
+            body.drag = groundDrag;
+        }
+        else {
+            body.drag = airDrag;
+        }
     }
 
     void ClearState()
@@ -192,9 +179,11 @@ public class Assassin : MonoBehaviour
         stepsSinceLastGrounded += 1;
         stepsSinceLastJump += 1;
         velocity = body.velocity;
-        if (CheckClimbing() || OnGround || SnapToGround() || CheckSteepContacts())
+        if (
+            CheckClimbing() || OnGround || SnapToGround() || CheckSteepContacts()
+        )
         {
-        stepsSinceLastGrounded = 0;
+            stepsSinceLastGrounded = 0;
             if (stepsSinceLastJump > 1)
             {
                 jumpPhase = 0;
@@ -222,11 +211,13 @@ public class Assassin : MonoBehaviour
     {
         if (connectedBody == previousConnectedBody)
         {
-           Vector3 connectionMovement = connectedBody.transform.TransformPoint(connectionLocalPosition) - connectionWorldPosition;
+           Vector3 connectionMovement = connectedBody.transform.TransformPoint(connectionLocalPosition) -
+           connectionWorldPosition;
            connectionVelocity = connectionMovement / Time.deltaTime;
         }
         connectionWorldPosition = body.position;
-        connectionLocalPosition = connectedBody.transform.InverseTransformPoint(connectionWorldPosition);
+        connectionLocalPosition = connectedBody.transform.InverseTransformPoint(connectionWorldPosition
+        );
     }
 
     bool CheckClimbing()
@@ -260,7 +251,10 @@ public class Assassin : MonoBehaviour
         {
             return false;
         }
-        if (!Physics.Raycast(body.position, -upAxis, out RaycastHit hit, probeDistance, probeMask))
+        if (!Physics.Raycast(
+            body.position, -upAxis, out RaycastHit hit,
+            probeDistance, probeMask
+        ))
         {
             return false;
         }
@@ -307,8 +301,8 @@ public class Assassin : MonoBehaviour
         {
             acceleration = maxClimbAcceleration;
             speed = maxClimbSpeed;
-            xAxis = Vector3.zero;
-            zAxis = ProjectDirectionOnPlane(camTrans.forward, contactNormal).normalized;
+            xAxis = Vector3.Cross(contactNormal, upAxis);
+            zAxis = upAxis;
         }
         else
         {
@@ -321,7 +315,6 @@ public class Assassin : MonoBehaviour
         zAxis = ProjectDirectionOnPlane(zAxis, contactNormal);
 
         Vector3 relativeVelocity = velocity - connectionVelocity;
-
         float currentX = Vector3.Dot(relativeVelocity, xAxis);
         float currentZ = Vector3.Dot(relativeVelocity, zAxis);
 
@@ -369,14 +362,17 @@ public class Assassin : MonoBehaviour
         }
         velocity += jumpDirection * jumpSpeed;
     }
+
     void OnCollisionEnter(Collision collision)
     {
         EvaluateCollision(collision);
     }
+
     void OnCollisionStay(Collision collision)
     {
         EvaluateCollision(collision);
     }
+
     void EvaluateCollision(Collision collision)
     {
         int layer = collision.gameObject.layer;
@@ -413,10 +409,12 @@ public class Assassin : MonoBehaviour
             }
         }
     }
+
     Vector3 ProjectDirectionOnPlane(Vector3 direction, Vector3 normal)
     {
         return (direction - normal * Vector3.Dot(direction, normal)).normalized;
     }
+
     float GetMinDot(int layer)
     {
         return (stairsMask & (1 << layer)) == 0 ? minGroundDotProduct : minStairsDotProduct;
