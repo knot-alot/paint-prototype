@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class enemy : MonoBehaviour
 {
     [SerializeField]
     ParticleSystem praticle;
@@ -34,23 +34,23 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("UnlimPaint")) this.usePaint = !this.usePaint;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (currentHealth > 0)
-            {
-                this.praticle.Play();
-            }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if (currentHealth > 0)
+        //    {
+        //        this.praticle.Play();
+        //    }
 
-        }
-        if (Input.GetMouseButton(0))
-        {
-            if (this.usePaint) this.TakeDamage(1);
-        }
+        //}
+        //if (Input.GetMouseButton(0))
+        //{
+        //    if (this.usePaint) this.TakeDamage(1);
+        //}
 
-        else if (Input.GetMouseButtonUp(0))
-        {
-            this.praticle.Stop();
-        }
+        //else if (Input.GetMouseButtonUp(0))
+        //{
+        //    this.praticle.Stop();
+        //}
 
 
 
@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
         if (this.currentHealth < 0) this.currentHealth = 0;
 
         paintTank.SetFill(this.currentHealth);
-        
+
     }
 
     public void AddPaint(int paint)
@@ -108,3 +108,4 @@ public class Player : MonoBehaviour
 
 
 }
+
