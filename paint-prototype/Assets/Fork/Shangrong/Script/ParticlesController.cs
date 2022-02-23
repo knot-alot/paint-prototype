@@ -28,6 +28,9 @@ public class ParticlesController : MonoBehaviour
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
         if (other.tag == "Destructable") other.GetComponent<Destructable>().TakeDamage(10);
+        if (other.tag == "Player") other.GetComponent<Player>().TakeDamage(10);
+        if (other.tag == "enemy") other.GetComponent<enemy>().TakeDamage(10);
+
 
         Paintable p = other.GetComponent<Paintable>();
         if (p != null)
