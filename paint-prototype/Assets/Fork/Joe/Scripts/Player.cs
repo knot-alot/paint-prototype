@@ -17,13 +17,19 @@ public class Player : MonoBehaviour
     public GameObject text;
 
     public bool usePaint = true;
+
+    [Header("Player Respawn")]
+    [SerializeField]
+    private Transform player;
+
+    [SerializeField]
+    private Transform respawnPointBlue;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         paintTank.SetMaxFill(maxHealth);
-        
-       
     }
 
     // Update is called once per frame
@@ -36,27 +42,28 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            
-            if (currentHealth > 0) {
-                
+
+            if (currentHealth > 0)
+            {
+
                 praticle.Play();
             }
-        
+
         }
 
-        if(Input.GetMouseButton(0) && usePaint) TakeDamage(1);
+        if (Input.GetMouseButton(0) && usePaint) TakeDamage(1);
 
         else if (Input.GetMouseButtonUp(0))
         {
             praticle.Stop();
         }
 
-        
+
 
         praticle.transform.localEulerAngles = angle;
 
-    
-       text.SetActive(false);
+
+        text.SetActive(false);
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
@@ -68,7 +75,7 @@ public class Player : MonoBehaviour
             interactable = hit.collider.GetComponent<Interactable>();
 
             if (interactable) text.SetActive(true);
-          
+
         }
 
         if (Input.GetKey(KeyCode.E))
@@ -77,7 +84,7 @@ public class Player : MonoBehaviour
         }
 
         if (currentHealth == 0) PlayerDeath();
-        
+
     }
 
     public void TakeDamage(int damage)
@@ -101,9 +108,17 @@ public class Player : MonoBehaviour
     void PlayerDeath()
     {
         Instantiate(deathParticle, transform.position, Quaternion.identity);
-
-        Destroy(gameObject);
+        if (gameObject.tag == "Player")
+        {
+            currentHealth = 1000;
+            //Lock movement and shooting
+            //move the player to respawn zone
+            //show cheap ui for countdown to respawn
+            //croutine after x seconds move player to respawn point and unlock movement and shooting
+            player.transform.position = respawnPointBlue.transform.position;
+        }
+        //Destroy(gameObject);
     }
 
-  
+
 }

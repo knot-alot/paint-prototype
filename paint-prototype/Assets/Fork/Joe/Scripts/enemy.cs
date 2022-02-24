@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    
     [SerializeField]
     ParticleSystem praticle;
     [SerializeField]
@@ -19,6 +18,13 @@ public class enemy : MonoBehaviour
 
     public bool usePaint = true;
     // Start is called before the first frame update
+
+    [Header("Enemy Respawn")]
+    [SerializeField]
+    private Transform player;
+
+    [SerializeField]
+    private Transform respawnPointRed;
 
     void Start()
     {
@@ -37,7 +43,7 @@ public class enemy : MonoBehaviour
 
         if (Input.GetButtonDown("Fire"))
         {
-                         
+
             this.praticle.Play();
         }
 
@@ -98,9 +104,14 @@ public class enemy : MonoBehaviour
 
     void PlayerDeath()
     {
-        Instantiate(this.deathParticle, this.transform.position, Quaternion.identity);
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
+        if (gameObject.tag == "enemy")
+        {
+            currentHealth = 1000;
+            player.transform.position = respawnPointRed.transform.position;
+        }
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 
 
