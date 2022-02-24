@@ -132,12 +132,12 @@ GameObject:
   - component: {fileID: 202285707}
   - component: {fileID: 1588827397}
   m_Layer: 8
-  m_Name: Player
+  m_Name: Single_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &202285703
 Transform:
   m_ObjectHideFlags: 0
@@ -619,6 +619,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1660928051559984380}
     m_Modifications:
+    - target: {fileID: 2295096127125193890, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332741407005184929, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332741407005184929, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4332741407122752564, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -666,6 +678,34 @@ PrefabInstance:
     - target: {fileID: 4332741407122752567, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
       propertyPath: m_Name
       value: Split_Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332741407317256259, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332741407946514491, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332741407946514491, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 9121013012844676283, guid: d3b31a34615309149b742d0e33b13673, type: 3}
+    - target: {fileID: 4332741408136884040, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332741408136884040, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332741408323900941, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 9121013012844676283, guid: 844f41c0429594842a0671c6668b6c32, type: 3}
+    - target: {fileID: 4332741408323900943, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5651391068751869748, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
       propertyPath: m_Camera

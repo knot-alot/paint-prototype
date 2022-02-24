@@ -36,10 +36,11 @@ public class enemy : MonoBehaviour
 
         if (Input.GetButtonDown("Fire"))
         {
-            if (this.usePaint)
-                this.TakeDamage(100);
+                         
             this.praticle.Play();
         }
+
+        if (Input.GetButton("Fire") && usePaint) TakeDamage(1);
 
         else if (Input.GetButtonUp("Fire"))
         {
@@ -65,7 +66,7 @@ public class enemy : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetButton("player2_X"))
         {
             if (interactable) this.AddPaint(1);
         }

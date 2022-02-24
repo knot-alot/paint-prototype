@@ -351,58 +351,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7261b25651371e41a11a477a76d509a, type: 3}
---- !u!1 &1530752151 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 963151072, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-  m_PrefabInstance: {fileID: 1946467927452452310}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1530752156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530752151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a0bfc5b74ca2eb4a8551596666395e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensitivityX: 0
-  sensitivityY: 0
---- !u!1 &1823230145 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 299489311, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-  m_PrefabInstance: {fileID: 1946467927452452310}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1823230147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823230145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2568d4ee35a67be4b931c9e45d87dab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInputSpace: {fileID: 0}
-  maxSpeed: 10
-  maxAcceleration: 10
-  maxAirAcceleration: 1
-  jumpHeight: 2
-  maxAirJumps: 0
-  maxGroundAngle: 25
-  maxStairsAngle: 50
-  maxSnapSpeed: 100
-  probeDistance: 1
-  probeMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  stairsMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1001 &1929852568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,9 +463,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Controller
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 299489319, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
-    - {fileID: 299489316, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
+    - target: {fileID: 8236304605311525541, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236304605553471985, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
 --- !u!1001 &3726085244606399978
 PrefabInstance:
@@ -530,6 +484,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ec0d4a9cda76787438ef90622eaa29a8, type: 2}
+    - target: {fileID: 2291912390399515416, guid: 03cce7a9031f45443a0ee3a805326e64, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7524176076277400552, guid: 03cce7a9031f45443a0ee3a805326e64, type: 3}
       propertyPath: m_RootOrder
       value: 2
