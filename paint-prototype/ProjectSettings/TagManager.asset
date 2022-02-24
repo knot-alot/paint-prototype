@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Destructable
   - enemy
+  - take_damage
   layers:
   - Default
   - TransparentFX

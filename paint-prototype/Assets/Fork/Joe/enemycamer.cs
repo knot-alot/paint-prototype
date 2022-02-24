@@ -40,8 +40,8 @@ public class enemycamer : MonoBehaviour
     {
        // mouseX = Input.GetAxisRaw("Mouse X");
        // mouseY = Input.GetAxisRaw("Mouse Y");
-         mouseX = Input.GetAxisRaw("joyx");
-         mouseY = Input.GetAxisRaw("joyy");
+         mouseX = Input.GetAxis("joyx");
+         mouseY = Input.GetAxis("joyy");
         rotationY += mouseX * sensitivityX * multiplier;
         rotationX -= mouseY * sensitivityY * multiplier;
 
