@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerCamera : MonoBehaviour
+public class enemycamer : MonoBehaviour
 {
     [SerializeField] private float sensitivityX;
     [SerializeField] private float sensitivityY;
@@ -20,7 +20,8 @@ public class PlayerCamera : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         cam = GetComponentInChildren<Camera>();
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -28,20 +29,22 @@ public class PlayerCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         myInput();
 
         cam.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation = Quaternion.Euler(0,rotationY,0);
+        transform.rotation = Quaternion.Euler(0, rotationY, 0);
     }
-    void myInput() {
-         mouseX = Input.GetAxisRaw("Mouse X");
-          mouseY = Input.GetAxisRaw("Mouse Y");
-         // mouseX = Input.GetAxisRaw("joyx");
-         // mouseY = Input.GetAxisRaw("joyy");
+    void myInput()
+    {
+       // mouseX = Input.GetAxisRaw("Mouse X");
+       // mouseY = Input.GetAxisRaw("Mouse Y");
+         mouseX = Input.GetAxisRaw("joyx");
+         mouseY = Input.GetAxisRaw("joyy");
         rotationY += mouseX * sensitivityX * multiplier;
         rotationX -= mouseY * sensitivityY * multiplier;
 
-        rotationX = Mathf.Clamp(rotationX, -90f,90f);
+        rotationX = Mathf.Clamp(rotationX, -90f, 90f);
     }
 }
