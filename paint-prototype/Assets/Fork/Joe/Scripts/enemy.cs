@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    
     [SerializeField]
     ParticleSystem praticle;
     [SerializeField]

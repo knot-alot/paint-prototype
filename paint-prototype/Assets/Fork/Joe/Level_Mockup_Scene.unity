@@ -123,11 +123,45 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &171804611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 754051739, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
+  m_PrefabInstance: {fileID: 1588827394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &171804618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171804611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd359fd01416ca44a927e24980480f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &320038514 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1660495349, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
   m_PrefabInstance: {fileID: 1588827394}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &937509838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1760629975, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
+  m_PrefabInstance: {fileID: 1588827394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &937509845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937509838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd359fd01416ca44a927e24980480f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1588827394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,6 +213,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3067055393687657205, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
+      propertyPath: paintColor.g
+      value: 0.4117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265497976535661525, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -62.94
+      objectReference: {fileID: 0}
     - target: {fileID: 7154217373392251711, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
       propertyPath: m_Name
       value: Character_Controller
@@ -191,7 +233,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3783483429032366409, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e441f011a0b1642408f80e862c4fc4bf, type: 3}
 --- !u!1001 &2102972134
 PrefabInstance:

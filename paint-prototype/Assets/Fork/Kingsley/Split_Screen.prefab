@@ -5381,6 +5381,7 @@ GameObject:
   - component: {fileID: 4332741408323900928}
   - component: {fileID: 4332741408323900931}
   - component: {fileID: 4332741408323900930}
+  - component: {fileID: 621883194756141969}
   - component: {fileID: 4332741408323900941}
   m_Layer: 8
   m_Name: Player_1_Controlle
@@ -5488,6 +5489,18 @@ MonoBehaviour:
     m_Bits: 1395
   groundDrag: 6.4
   airDrag: 0.5
+--- !u!114 &621883194756141969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4332741408323900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd359fd01416ca44a927e24980480f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4332741408323900941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25456,7 +25469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262a14d38ccd6f84e9501175c5baf20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4332741407008382022
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236304605883138098, guid: e1ae0a4b3e4e4c5468eef307b61425b7, type: 3}
+  m_PrefabInstance: {fileID: 4332741406862050098}
+  m_PrefabAsset: {fileID: 0}
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

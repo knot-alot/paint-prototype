@@ -9,11 +9,13 @@ public class ParticlesController: MonoBehaviour{
     public float maxRadius = 0.2f;
     public float strength = 1;
     public float hardness = 1;
+
     [Space]
     ParticleSystem part;
     List<ParticleCollisionEvent> collisionEvents;
 
     void Start(){
+        
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
         //var pr = part.GetComponent<ParticleSystemRenderer>();
@@ -28,6 +30,7 @@ public class ParticlesController: MonoBehaviour{
         if (other.tag == "Destructable") other.GetComponent<Destructable>().TakeDamage(10);
         if (other.tag == "Player") other.GetComponent<Player>().TakeDamage(10);
         if (other.tag == "enemy") other.GetComponent<enemy>().TakeDamage(10);
+        
 
         //enemy=orange player=blue
 
