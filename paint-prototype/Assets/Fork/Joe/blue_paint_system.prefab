@@ -4847,7 +4847,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5337834572726824452}
-  m_LocalRotation: {x: 0.0011803368, y: -0.12824064, z: 0.017412513, w: -0.99158955}
+  m_LocalRotation: {x: 0.001177958, y: -0.12824035, z: 0.017410126, w: -0.9915896}
   m_LocalPosition: {x: -3.2845836, y: 0.93700004, z: 6.8616915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4856,7 +4856,7 @@ Transform:
   - {fileID: 6844822261380788752}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.122, y: 290.21802, z: -1.996}
+  m_LocalEulerAnglesHint: {x: 0.122, y: 374.736, z: -1.996}
 --- !u!198 &379027605051310971
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9695,8 +9695,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0127ec27890ea674eb162c1ac02e4b59, type: 2}
-  - {fileID: 2100000, guid: 0127ec27890ea674eb162c1ac02e4b59, type: 2}
+  - {fileID: 2100000, guid: 9ded959b978422948a89915a49955d19, type: 2}
+  - {fileID: 2100000, guid: 9ded959b978422948a89915a49955d19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14595,8 +14595,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0127ec27890ea674eb162c1ac02e4b59, type: 2}
-  - {fileID: 2100000, guid: 0127ec27890ea674eb162c1ac02e4b59, type: 2}
+  - {fileID: 2100000, guid: 9ded959b978422948a89915a49955d19, type: 2}
+  - {fileID: 2100000, guid: 9ded959b978422948a89915a49955d19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19458,7 +19458,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0127ec27890ea674eb162c1ac02e4b59, type: 2}
+  - {fileID: 2100000, guid: 9ded959b978422948a89915a49955d19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24374,8 +24374,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0127ec27890ea674eb162c1ac02e4b59, type: 2}
-  - {fileID: 2100000, guid: 0127ec27890ea674eb162c1ac02e4b59, type: 2}
+  - {fileID: 2100000, guid: 9ded959b978422948a89915a49955d19, type: 2}
+  - {fileID: 2100000, guid: 9ded959b978422948a89915a49955d19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -257,8 +257,6 @@ MonoBehaviour:
   paintTank: {fileID: 8236304606613147973}
   text: {fileID: 8236304604957987468}
   usePaint: 1
-  player: {fileID: 0}
-  respawnPointBlue: {fileID: 0}
 --- !u!1 &1054890342
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,18 +619,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1660928051559984380}
     m_Modifications:
-    - target: {fileID: 2295096127125193890, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332741407005184929, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332741407005184929, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 4332741407122752564, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -681,54 +667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Split_Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 4332741407317256259, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332741407946514491, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 754051736}
-    - target: {fileID: 4332741407946514491, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: maxHealth
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332741407946514491, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: deathParticle
-      value: 
-      objectReference: {fileID: 9121013012844676283, guid: d3b31a34615309149b742d0e33b13673, type: 3}
-    - target: {fileID: 4332741408136884040, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332741408136884040, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332741408323900941, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1760629972}
-    - target: {fileID: 4332741408323900941, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: deathParticle
-      value: 
-      objectReference: {fileID: 9121013012844676283, guid: 844f41c0429594842a0671c6668b6c32, type: 3}
-    - target: {fileID: 4332741408323900943, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 5651391068751869748, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 103146451}
-    - target: {fileID: 5651391068952158333, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5651391069122278185, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
 --- !u!4 &286852844 stripped
@@ -752,13 +694,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262a14d38ccd6f84e9501175c5baf20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1760629972 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4332741408323900940, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-  m_PrefabInstance: {fileID: 4332741406837998296}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &754051736 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4332741407317256256, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
-  m_PrefabInstance: {fileID: 4332741406837998296}
-  m_PrefabAsset: {fileID: 0}

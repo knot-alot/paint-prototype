@@ -134,7 +134,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &8236304605723158381
 MonoBehaviour:
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 8236304605883138097}
   - component: {fileID: 8236304605883138096}
   m_Layer: 5
-  m_Name: text
+  m_Name: enemy text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,11 +208,11 @@ RectTransform:
   m_Father: {fileID: 8236304605723158355}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28, y: 217}
-  m_SizeDelta: {x: 281.6248, y: 94.8397}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -345.6247, y: -53}
+  m_SizeDelta: {x: 281.62476, y: 94.83969}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &8236304605883138097
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 8236304606375461880}
   - component: {fileID: 8236304606375461883}
   m_Layer: 5
-  m_Name: tank
+  m_Name: enemy tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,11 +289,11 @@ RectTransform:
   m_Father: {fileID: 8236304605723158355}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -449, y: 161}
-  m_SizeDelta: {x: 60.9937, y: 41.144}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -64, y: -53}
+  m_SizeDelta: {x: 60.993713, y: 41.144012}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &8236304606375461880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.932394, y: 0.82288843}
+  m_AnchoredPosition: {x: 11.932373, y: 0.82289124}
   m_SizeDelta: {x: 50, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8236304607009435504
