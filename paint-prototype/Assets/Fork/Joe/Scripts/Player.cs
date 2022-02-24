@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         paintTank.SetMaxFill(maxHealth);
+        
        
     }
 
@@ -35,8 +36,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if(usePaint) TakeDamage(1);
+            
             if (currentHealth > 0) {
+                if (usePaint) TakeDamage(100);
                 praticle.Play();
             }
         
@@ -51,7 +53,7 @@ public class Player : MonoBehaviour
         praticle.transform.localEulerAngles = angle;
 
     
-    text.SetActive(false);
+       text.SetActive(false);
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Interactable interactable = null;

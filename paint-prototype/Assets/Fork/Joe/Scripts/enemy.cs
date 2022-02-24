@@ -34,23 +34,17 @@ public class enemy : MonoBehaviour
 
         //if (Input.GetButtonDown("UnlimPaint")) this.usePaint = !this.usePaint;
 
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    if (currentHealth > 0)
-        //    {
-        //        this.praticle.Play();
-        //    }
+        if (Input.GetButtonDown("Fire"))
+        {
+            if (this.usePaint)
+               this.TakeDamage(100);
+            this.praticle.Play();
+        }
 
-        //}
-        //if (Input.GetMouseButton(0))
-        //{
-        //    if (this.usePaint) this.TakeDamage(1);
-        //}
-
-        //else if (Input.GetMouseButtonUp(0))
-        //{
-        //    this.praticle.Stop();
-        //}
+        else if (Input.GetButtonUp("Fire"))
+        {
+           this.praticle.Stop();
+        }
 
 
 
@@ -70,10 +64,10 @@ public class enemy : MonoBehaviour
 
         }
 
-        //if (Input.GetKey(KeyCode.E))
-        //{
-        //    if (interactable) this.AddPaint(1);
-        //}
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (interactable) this.AddPaint(1);
+        }
 
         if (currentHealth == 0) this.PlayerDeath();
 
