@@ -216,8 +216,8 @@ MonoBehaviour:
   cameraTransform: {fileID: 103146447}
   camTrans: {fileID: 103146447}
   playerTransform: {fileID: 202285703}
-  maxSpeed: 5.3
-  maxClimbSpeed: 13.6
+  maxSpeed: 11
+  maxClimbSpeed: 7
   maxAcceleration: 70.3
   maxAirAcceleration: 25.5
   maxClimbAcceleration: 40
