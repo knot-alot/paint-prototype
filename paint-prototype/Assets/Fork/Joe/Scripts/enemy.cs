@@ -32,6 +32,7 @@ public class enemy : MonoBehaviour
         //RaycastHit hit;
         //Interactable interactable = null;
 
+
         //if (Physics.Raycast(ray, out hit, 30))
         //{
         //    interactable = hit.collider.GetComponent<Interactable>();
@@ -39,6 +40,43 @@ public class enemy : MonoBehaviour
         //    if (interactable) this.text.SetActive(true);
 
         //}
+
+        if (Input.GetButtonDown("Fire"))
+        {
+            if (this.usePaint)
+               this.TakeDamage(100);
+            this.praticle.Play();
+        }
+
+        else if (Input.GetButtonUp("Fire"))
+        {
+           this.praticle.Stop();
+        }
+
+
+
+        praticle.transform.localEulerAngles = angle;
+
+
+        text.SetActive(false);
+        Ray ray = this.cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Interactable interactable = null;
+
+        if (Physics.Raycast(ray, out hit, 30))
+        {
+            interactable = hit.collider.GetComponent<Interactable>();
+
+            if (interactable) this.text.SetActive(true);
+
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (interactable) this.AddPaint(1);
+        }
+
+
         if (currentHealth == 0) this.PlayerDeath();
 
     }
