@@ -52,11 +52,12 @@ public class enemy : MonoBehaviour
 
 
         text.SetActive(false);
-        Ray ray = this.cam.ScreenPointToRay(Input.mousePosition);
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
         Interactable interactable = null;
-
-        if (Physics.Raycast(ray, out hit, 30))
+        int layermask = 1 << 8;
+        layermask = ~layermask;
+        if (Physics.Raycast(transform.position, fwd, out hit, 100.0f, layermask))
         {
             interactable = hit.collider.GetComponent<Interactable>();
 
