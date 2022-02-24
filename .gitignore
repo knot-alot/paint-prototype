@@ -79,6 +79,7 @@ crashlytics-build.properties
 /paint-prototype/Logs/*
 /paint-prototype/Temp/*
 /paint-prototype/UserSettings/*
+/paint-prototype/obj/*
 
 # Unity Production Scene ignored to enforce users must use the prefabs
-/paint-prototype/Assets/Production/Scenes/*
+*.cache
