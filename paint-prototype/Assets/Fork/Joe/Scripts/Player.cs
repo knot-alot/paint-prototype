@@ -35,15 +35,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            
+            if(usePaint) TakeDamage(1);
             if (currentHealth > 0) {
                 praticle.Play();
             }
         
         }
-        if (Input.GetMouseButton(0) && usePaint) TakeDamage(1);
-        
-
        else if (Input.GetMouseButtonUp(0))
         {
             praticle.Stop();
@@ -76,7 +73,7 @@ public class Player : MonoBehaviour
         
     }
 
-    public void TakeDamage(int damage)
+    void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
@@ -85,7 +82,7 @@ public class Player : MonoBehaviour
         paintTank.SetFill(currentHealth);
     }
 
-    public void AddPaint(int paint)
+    void AddPaint(int paint)
     {
         currentHealth += paint;
 
