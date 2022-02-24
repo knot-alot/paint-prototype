@@ -257,6 +257,8 @@ MonoBehaviour:
   paintTank: {fileID: 8236304606613147973}
   text: {fileID: 8236304604957987468}
   usePaint: 1
+  player: {fileID: 0}
+  respawnPointBlue: {fileID: 0}
 --- !u!1 &1054890342
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +686,10 @@ PrefabInstance:
       value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4332741407946514491, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 754051736}
+    - target: {fileID: 4332741407946514491, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
       propertyPath: maxHealth
       value: 500
       objectReference: {fileID: 0}
@@ -699,6 +705,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4332741408323900941, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1760629972}
     - target: {fileID: 4332741408323900941, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
       propertyPath: deathParticle
       value: 
@@ -742,3 +752,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262a14d38ccd6f84e9501175c5baf20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1760629972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4332741408323900940, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+  m_PrefabInstance: {fileID: 4332741406837998296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &754051736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4332741407317256256, guid: 69194fb2abe830a48be8d34c5605c35e, type: 3}
+  m_PrefabInstance: {fileID: 4332741406837998296}
+  m_PrefabAsset: {fileID: 0}
