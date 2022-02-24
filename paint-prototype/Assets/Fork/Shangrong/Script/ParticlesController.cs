@@ -25,6 +25,12 @@ public class ParticlesController: MonoBehaviour{
        // List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>(part.GetSafeCollisionEventSize());
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
+        if (other.tag == "Destructable") other.GetComponent<Destructable>().TakeDamage(10);
+        if (other.tag == "Player") other.GetComponent<Player>().TakeDamage(10);
+        if (other.tag == "enemy") other.GetComponent<enemy>().TakeDamage(10);
+
+        //enemy=orange player=blue
+
         Paintable p = other.GetComponent<Paintable>();
         if(p != null){
             for  (int i = 0; i< numCollisionEvents; i++){
