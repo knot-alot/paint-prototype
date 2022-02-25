@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Column_Team_Blue
+  m_Name: Paintable_lines
   m_Shader: {fileID: -6465566751694194690, guid: 51ac09f96d411f24f8300f543b8a8db6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -128,7 +128,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_1bf9c5e6f5c34360a490da1c94e6a7c1: {r: 1, g: 1, b: 1, a: 0}
-    - Color_863351f5ceea4c998ef51baab6dd758b: {r: 0.1215686, g: 0.21937001, b: 0.88235295, a: 1}
+    - Color_863351f5ceea4c998ef51baab6dd758b: {r: 0.8352942, g: 0.73333335, b: 0.15686275, a: 1}
     - Vector2_55edcb19ba1d459dbb3c027e66abbc1e: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_e97cb9b7b5564bc9857e7669e2d0b82f: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.7019608, g: 0.34901962, b: 0.22352943, a: 1}
