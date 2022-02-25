@@ -34,7 +34,7 @@ public class COLORDE : MonoBehaviour
         layermask = ~layermask;
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, dir, out hit, 5.0f, layermask))
+        if (Physics.Raycast(transform.position, dir, out hit, 100.0f, layermask))
         {
             Renderer renderer = hit.collider.GetComponent<Paintable>().getRenderer();
             // Debug.Log("Got renderer " + renderer);

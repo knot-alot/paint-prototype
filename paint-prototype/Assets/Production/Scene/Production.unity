@@ -586,6 +586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2123176678424219606, guid: dd5d649689bfa5442b53f2f3fa44337f, type: 3}
+      propertyPath: paintColor.g
+      value: 0.4117647
+      objectReference: {fileID: 0}
     - target: {fileID: 2372159033010993631, guid: dd5d649689bfa5442b53f2f3fa44337f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -644,11 +648,11 @@ PrefabInstance:
       objectReference: {fileID: 467272936}
     - target: {fileID: 4028284400920543164, guid: dd5d649689bfa5442b53f2f3fa44337f, type: 3}
       propertyPath: sensitivityX
-      value: 150
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4028284400920543164, guid: dd5d649689bfa5442b53f2f3fa44337f, type: 3}
       propertyPath: sensitivityY
-      value: 100
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4028284401033143290, guid: dd5d649689bfa5442b53f2f3fa44337f, type: 3}
       propertyPath: respawnZone
