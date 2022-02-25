@@ -10,6 +10,8 @@ public class ParticlesController: MonoBehaviour{
     public float strength = 1;
     public float hardness = 1;
 
+    [SerializeField] string myTag = "";
+
     [Space]
     ParticleSystem part;
     List<ParticleCollisionEvent> collisionEvents;
@@ -26,6 +28,10 @@ public class ParticlesController: MonoBehaviour{
     void OnParticleCollision(GameObject other) {
        // List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>(part.GetSafeCollisionEventSize());
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
+
+        if (other.tag == myTag){
+            return;
+        }
 
         if (other.tag == "Destructable") other.GetComponent<Destructable>().TakeDamage(10);
         if (other.tag == "Player") other.GetComponent<Player>().TakeDamage(10);
