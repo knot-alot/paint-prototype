@@ -5150,9 +5150,13 @@ MonoBehaviour:
   deathParticle: {fileID: 9121013012844676283, guid: d3b31a34615309149b742d0e33b13673, type: 3}
   cam: {fileID: 4332741407420590356}
   maxHealth: 500
+  currentHealth: 0
   paintTank: {fileID: 5651391070019240137}
   text: {fileID: 5651391069430448896}
   usePaint: 1
+  player: {fileID: 0}
+  respawnPointRed: {fileID: 0}
+  respawnManager: {fileID: 0}
 --- !u!1 &4332741407420590345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,13 +5503,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   praticle: {fileID: 4134989194554171197}
-  deathParticle: {fileID: 9121013012844676283, guid: 844f41c0429594842a0671c6668b6c32, type: 3}
   cam: {fileID: 4332741408425092909}
   maxHealth: 1000
   currentHealth: 1000
   paintTank: {fileID: 5651391070184117149}
   text: {fileID: 5651391068593967188}
   usePaint: 1
+  respawnManager: {fileID: 0}
 --- !u!1 &4332741408425092905
 GameObject:
   m_ObjectHideFlags: 0

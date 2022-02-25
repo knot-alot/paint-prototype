@@ -5,9 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem praticle;
-    [SerializeField]
-    ParticleSystem deathParticle;
+    public ParticleSystem praticle;
+    
     [SerializeField] Camera cam;
     public int maxHealth = 1000;
     public int currentHealth;
@@ -18,18 +17,26 @@ public class Player : MonoBehaviour
 
     public bool usePaint = true;
 
-    [Header("Player Respawn")]
     [SerializeField]
-    private Transform player;
+    public RespawnManager respawnManager;
 
-    [SerializeField]
-    private Transform respawnPointBlue;
+    //[Header("Player Respawn")]
+    //[SerializeField]
+    //private Transform player;
+
+    //[SerializeField]
+    //private Transform respawnPointBlue;
+
+    //[SerializeField]
+    //public float respawnDelay = 1f;
 
     // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
         paintTank.SetMaxFill(maxHealth);
+        respawnManager = this.GetComponent<RespawnManager>();
     }
 
     // Update is called once per frame
@@ -106,18 +113,9 @@ public class Player : MonoBehaviour
 
     void PlayerDeath()
     {
-        Instantiate(deathParticle, transform.position, Quaternion.identity);
-        if (gameObject.tag == "Player")
-        {
-            currentHealth = 1000;
-            //Lock movement and shooting
-            //move the player to respawn zone
-            //show cheap ui for countdown to respawn
-            //croutine after x seconds move player to respawn point and unlock movement and shooting
-            player.transform.position = respawnPointBlue.transform.position;
-        }
-        //Destroy(gameObject);
+        respawnManager.runDeath();
     }
 
-  
+
+
 }
