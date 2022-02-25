@@ -6,12 +6,12 @@ public class enemy : MonoBehaviour
 {
     
     [SerializeField]
-    ParticleSystem praticle;
+    public ParticleSystem praticle;
     [SerializeField]
     ParticleSystem deathParticle;
     [SerializeField] Camera cam;
-    [SerializeField] private int maxHealth = 200;
-    private int currentHealth;
+    [SerializeField] public int maxHealth = 1000;
+    public int currentHealth;
 
     public PaintTank paintTank;
 
@@ -27,10 +27,14 @@ public class enemy : MonoBehaviour
     [SerializeField]
     private Transform respawnPointRed;
 
+    [SerializeField]
+    public EnemyRespawnManager respawnManager;
+
     void Start()
     {
         this.currentHealth = this.maxHealth;
         this.paintTank.SetMaxFill(this.maxHealth);
+        respawnManager = this.GetComponent<EnemyRespawnManager>();
 
     }
 
@@ -105,14 +109,7 @@ public class enemy : MonoBehaviour
 
     void PlayerDeath()
     {
-        Instantiate(deathParticle, transform.position, Quaternion.identity);
-        if (gameObject.tag == "enemy")
-        {
-            currentHealth = 1000;
-            player.transform.position = respawnPointRed.transform.position;
-        }
-
-        //Destroy(this.gameObject);
+        respawnManager.runDeath();
     }
 
 
