@@ -43,6 +43,7 @@ public class EnemyRespawnManager : MonoBehaviour
 
     IEnumerator playerDeath()
     {
+        plMov.GetComponent<Rigidbody>().velocity = Vector3.zero;
         pl.praticle.Stop();
         pl.enabled = false;
         plMov.enabled = false;
